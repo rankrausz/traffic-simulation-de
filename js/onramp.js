@@ -40,15 +40,15 @@ const REFSIZE_SMARTPHONE=150;
 // general ui settings
 //#############################################################
 
-const userCanDropObjects=true;
-var showCoords=true;  // show logical coords of nearest road to mouse pointer
+const userCanDropObjects=false;
+var showCoords=false;  // show logical coords of nearest road to mouse pointer
                       // definition => showLogicalCoords(.) in canvas_gui.js
                       // application: here at drawSim (7):  
 //#############################################################
 // general debug settings (set=false for public deployment)
 //#############################################################
 
-drawRoadIDs=true; // override control_gui.js; call later
+drawRoadIDs=false; // override control_gui.js; call later
                   // network[ir].drawRoadID();
 drawVehIDs=false;  // override control_gui.js;
                    // need to call later road.drawVehIDs=drawVehIDs
@@ -82,6 +82,21 @@ qOn=1200./3600;
 commaDigits=0;
 setSlider(slider_qOn, slider_qOnVal, 3600*qOn, commaDigits, "veh/h");
 
+fracTruck=0;
+fracScooter=0;
+
+IDM_v0=120/3.6;
+setSlider(slider_IDM_v0, slider_IDM_v0Val, 3.6*IDM_v0, 0, "km/h");
+
+IDM_T=1.5;
+IDM_a=1.4;
+setSlider(slider_IDM_a, slider_IDM_aVal, IDM_a, 1, "m/s<sup>2</sup>");
+
+IDM_b=2;
+MOBIL_p=0.2;
+MOBIL_bThr=0.3;
+MOBIL_bBiasRight_car=0.1;
+MOBIL_bBiasRight_truck=0.1;
 
 density=0.01; 
 
@@ -140,9 +155,7 @@ canvas.width  = simDivWindow.clientWidth;
 canvas.height  = simDivWindow.clientHeight;
 
 
-//console.log("before addTouchListeners()");
-addTouchListeners();
-//console.log("after addTouchListeners()");
+// No canvas edit tools are exposed in the simplified on-ramp scenario.
 
 
 //##################################################################
@@ -486,8 +499,6 @@ var trafficObjs=new TrafficObjects(canvas,2,2,0.40,0.50,3,2);
 // (then args xRelEditor,yRelEditor not relevant)
 //var trafficLightControl=new TrafficLightControlEditor(trafficObjs,0.5,0.5);
 var trafficLightControl=new TrafficLightControlEditor(trafficObjs,0.33,0.68);
-
-trafficObjs.setSpeedLimit(2,30); // trafficObj[2].value=x km/h, 0=free
 
 
 //############################################
@@ -889,8 +900,5 @@ function main_loop() {
 
 console.log("first main execution");
 
-showInfo();//!!!! change to showInfoString() plus strings defined inline or as extra .js scripts to be included: works also locally. See golfCourse.js. Also the command "showInfoString should be placed in control_gui.js;
-
 
 var myRun=setInterval(main_loop, 1000/fps);
-

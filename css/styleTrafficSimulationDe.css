@@ -1067,3 +1067,77 @@ screen and (min-resolution: 97dpi) and (max-aspect-ratio: 6/5){
 }
 
 } /*Smartphone portrait */
+
+
+/*#############################################################*/
+/* Simplified on-ramp teaching view */
+/*#############################################################*/
+
+body.simplifiedOnramp #header{
+  display: none;
+}
+
+body.simplifiedOnramp #sliders{
+  background-color: rgba(255,255,255,0.86);
+  border: 1px solid rgba(80,80,100,0.35);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 1.2vmin 1.4vmin;
+}
+
+body.simplifiedOnramp #sliders h3{
+  margin: 0 0 1vmin 0;
+  font-style: normal;
+}
+
+body.simplifiedOnramp #sliders table{
+  margin: 0 auto 0.8vmin auto;
+}
+
+body.simplifiedOnramp #sliders td{
+  padding: 0.35vmin 0.5vmin;
+  white-space: nowrap;
+}
+
+@media all and (min-aspect-ratio: 6/5){
+  body.simplifiedOnramp #sliders{
+    top: 14vmin;
+    left: calc(112vmin + 1vw);
+    width: calc(97vw - 113vmin);
+    min-width: 42vmin;
+    max-width: 60vmin;
+    height: auto;
+    z-index: 3;
+  }
+}
+
+@media all and (max-aspect-ratio: 6/5){
+  body.simplifiedOnramp #sliders{
+    top: 82vmin;
+    left: 2vmin;
+    width: 94vmin;
+    height: auto;
+    z-index: 3;
+  }
+}
+
+@media screen and (max-height: 600px) and (min-aspect-ratio: 6/5),
+screen and (max-width: 600px) and (min-aspect-ratio: 6/5),
+screen and (min-resolution: 97dpi) and (min-aspect-ratio: 6/5){
+  body.simplifiedOnramp #sliders{
+    top: 18vmin;
+    left: calc(112vmin + 1vw);
+    width: calc(97vw - 113vmin);
+    min-width: 50vmin;
+  }
+}
+
+@media screen and (max-height: 600px) and (max-aspect-ratio: 6/5),
+screen and (max-width: 600px) and (max-aspect-ratio: 6/5),
+screen and (min-resolution: 97dpi) and (max-aspect-ratio: 6/5){
+  body.simplifiedOnramp #sliders{
+    top: 79vmin;
+    left: 2vmin;
+    width: 94vmin;
+  }
+}
