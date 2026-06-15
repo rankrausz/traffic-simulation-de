@@ -78,7 +78,7 @@ qIn=2750./3600;
 commaDigits=0;
 setSlider(slider_qIn, slider_qInVal, 3600*qIn, commaDigits, "veh/h");
 
-qOn=1200./3600; 
+qOn=900./3600; 
 commaDigits=0;
 setSlider(slider_qOn, slider_qOnVal, 3600*qOn, commaDigits, "veh/h");
 
