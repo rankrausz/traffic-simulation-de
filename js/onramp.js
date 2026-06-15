@@ -89,11 +89,13 @@ IDM_v0=120/3.6;
 setSlider(slider_IDM_v0, slider_IDM_v0Val, 3.6*IDM_v0, 0, "km/h");
 
 IDM_T=1.5;
+setSlider(slider_IDM_T, slider_IDM_TVal, IDM_T, 1, "s");
 IDM_a=1.4;
 setSlider(slider_IDM_a, slider_IDM_aVal, IDM_a, 1, "m/s<sup>2</sup>");
 
 IDM_b=2;
 MOBIL_p=0.2;
+setSlider(slider_MOBIL_p, slider_MOBIL_pVal, MOBIL_p, 1, "m/s<sup>2</sup>");
 MOBIL_bThr=0.3;
 MOBIL_bBiasRight_car=0.1;
 MOBIL_bBiasRight_truck=0.1;
