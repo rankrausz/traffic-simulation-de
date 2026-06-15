@@ -74,7 +74,7 @@ var driver_varcoeff=0.15; //v0 and a coeff of variation (of "agility")
 
 
 
-qIn=4500./3600; 
+qIn=2750./3600; 
 commaDigits=0;
 setSlider(slider_qIn, slider_qInVal, 3600*qIn, commaDigits, "veh/h");
 
