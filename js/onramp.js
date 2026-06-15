@@ -888,6 +888,70 @@ function main_loop() {
     drawSim();
     userCanvasManip=false;
 }
+
+
+//##################################################
+// Help tooltips for the simplified parameter controls
+//##################################################
+
+function initParamHelpTooltips(){
+  var tooltip=document.getElementById("paramTooltip");
+  if(!tooltip){return;}
+
+  var activeHelp=null;
+
+  function positionTooltip(anchor){
+    var rect=anchor.getBoundingClientRect();
+    tooltip.style.display="block";
+
+    var margin=8;
+    var width=tooltip.offsetWidth;
+    var height=tooltip.offsetHeight;
+    var left=rect.left+0.5*rect.width-0.5*width;
+    var top=rect.top-height-margin;
+
+    if(top<margin){top=rect.bottom+margin;}
+    left=Math.max(margin,Math.min(left,window.innerWidth-width-margin));
+    top=Math.max(margin,Math.min(top,window.innerHeight-height-margin));
+
+    tooltip.style.left=left+"px";
+    tooltip.style.top=top+"px";
+  }
+
+  function showTooltip(anchor){
+    activeHelp=anchor;
+    tooltip.textContent=anchor.getAttribute("data-help") || "";
+    positionTooltip(anchor);
+  }
+
+  function hideTooltip(){
+    activeHelp=null;
+    tooltip.style.display="none";
+  }
+
+  var helpButtons=document.querySelectorAll(".paramHelp");
+  for(var i=0; i<helpButtons.length; i++){
+    (function(helpButton){
+      helpButton.addEventListener("mouseenter",function(){showTooltip(helpButton);});
+      helpButton.addEventListener("focus",function(){showTooltip(helpButton);});
+      helpButton.addEventListener("mouseleave",hideTooltip);
+      helpButton.addEventListener("blur",hideTooltip);
+      helpButton.addEventListener("click",function(event){
+        event.preventDefault();
+        event.stopPropagation();
+        showTooltip(helpButton);
+      });
+      helpButton.addEventListener("keydown",function(event){
+        if(event.key==="Escape"){hideTooltip();}
+      });
+    })(helpButtons[i]);
+  }
+
+  document.addEventListener("click",hideTooltip);
+  window.addEventListener("resize",function(){
+    if(activeHelp){positionTooltip(activeHelp);}
+  });
+}
  
 
  //############################################
@@ -902,5 +966,6 @@ function main_loop() {
 
 console.log("first main execution");
 
+initParamHelpTooltips();
 
 var myRun=setInterval(main_loop, 1000/fps);

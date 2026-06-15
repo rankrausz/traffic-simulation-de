@@ -1110,50 +1110,49 @@ body.simplifiedOnramp .paramHelp{
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 1.7vmin;
-  height: 1.7vmin;
-  min-width: 14px;
-  min-height: 14px;
-  border: 1px solid rgba(70,75,100,0.55);
+  width: 1.9vmin;
+  height: 1.9vmin;
+  min-width: 16px;
+  min-height: 16px;
+  border: 1px solid rgba(24,94,150,0.7);
   border-radius: 50%;
-  background-color: rgba(238,241,255,0.95);
-  color: #404060;
+  background-color: rgba(225,241,255,0.98);
+  color: #155f98;
   cursor: help;
-  font-size: 1.25vmin;
+  font-family: Georgia, serif;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
   line-height: 1;
   outline: none;
 }
 
-body.simplifiedOnramp .paramHelp::after{
-  content: attr(data-help);
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 0.8vmin);
-  transform: translateX(-50%);
+body.simplifiedOnramp .paramHelp:hover,
+body.simplifiedOnramp .paramHelp:focus{
+  background-color: rgba(203,231,255,1);
+  border-color: rgba(18,77,126,0.9);
+}
+
+body.simplifiedOnramp #paramTooltip{
+  position: fixed;
+  display: none;
   width: 24vmin;
-  min-width: 190px;
+  min-width: 210px;
+  min-height: 30px;
   box-sizing: border-box;
-  padding: 0.75vmin 0.9vmin;
+  padding: 8px 10px;
   border: 1px solid rgba(70,75,100,0.35);
   border-radius: 4px;
   background-color: rgba(255,255,255,0.98);
   box-shadow: 0 3px 10px rgba(0,0,0,0.18);
   color: #303045;
-  font-size: 1.55vmin;
+  font-size: 13px;
   font-weight: normal;
   line-height: 1.25;
   text-align: left;
   white-space: normal;
-  opacity: 0;
   pointer-events: none;
-  visibility: hidden;
-  z-index: 8;
-}
-
-body.simplifiedOnramp .paramHelp:hover::after,
-body.simplifiedOnramp .paramHelp:focus::after{
-  opacity: 1;
-  visibility: visible;
+  z-index: 10;
 }
 
 @media all and (min-aspect-ratio: 6/5){

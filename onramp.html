@@ -108,7 +108,8 @@
   <td class="important"><span class="paramLabel">Inflow
     <span class="paramHelp" tabindex="0"
           aria-label="Inflow: vehicles entering the main road each hour."
-          data-help="Vehicles entering the main road each hour.">?</span>
+          title="Vehicles entering the main road each hour."
+          data-help="Vehicles entering the main road each hour.">i</span>
   </span></td>
   <td> <input id="slider_qIn" type="range" 
               min="0" max="6000" step="10"></td>
@@ -119,7 +120,8 @@
   <td class="important"><span class="paramLabel">Onramp Flow
     <span class="paramHelp" tabindex="0"
           aria-label="Onramp Flow: vehicles entering from the ramp each hour."
-          data-help="Vehicles entering from the ramp each hour.">?</span>
+          title="Vehicles entering from the ramp each hour."
+          data-help="Vehicles entering from the ramp each hour.">i</span>
   </span></td>
   <td> <input id="slider_qOn" type="range" 
               min="0" max="2000" step="10"></td>
@@ -130,7 +132,8 @@
   <td><span class="paramLabel">Timelapse
     <span class="paramHelp" tabindex="0"
           aria-label="Timelapse: how fast simulated time runs."
-          data-help="How fast simulated time runs.">?</span>
+          title="How fast simulated time runs."
+          data-help="How fast simulated time runs.">i</span>
   </span></td>
   <td> <input id="slider_timewarp" type="range" 
               min="0.2" max="20" step="0.1"></td>
@@ -145,7 +148,8 @@
   <td><span class="paramLabel">Max Speed v0
     <span class="paramHelp" tabindex="0"
           aria-label="Max Speed v0: drivers' desired free-flow speed."
-          data-help="Drivers' desired free-flow speed.">?</span>
+          title="Drivers' desired free-flow speed."
+          data-help="Drivers' desired free-flow speed.">i</span>
   </span></td>
   <td> <input id="slider_IDM_v0" type="range" 
               min="20" max="160" step="1"></td>
@@ -156,7 +160,8 @@
   <td><span class="paramLabel">Time Gap T
     <span class="paramHelp" tabindex="0"
           aria-label="Time Gap T: time drivers try to keep to the vehicle ahead."
-          data-help="Time drivers try to keep to the vehicle ahead.">?</span>
+          title="Time drivers try to keep to the vehicle ahead."
+          data-help="Time drivers try to keep to the vehicle ahead.">i</span>
   </span></td>
   <td> <input id="slider_IDM_T" type="range" 
               min="0.6" max="3" step="0.1"></td>
@@ -167,7 +172,8 @@
   <td class="important"><span class="paramLabel">Max Accel a
     <span class="paramHelp" tabindex="0"
           aria-label="Max Accel a: strongest comfortable acceleration."
-          data-help="Strongest comfortable acceleration.">?</span>
+          title="Strongest comfortable acceleration."
+          data-help="Strongest comfortable acceleration.">i</span>
   </span></td>
   <td> <input id="slider_IDM_a" type="range" 
               min="0.3" max="4" step="0.1"></td>
@@ -178,7 +184,8 @@
   <td><span class="paramLabel">Politeness
     <span class="paramHelp" tabindex="0"
           aria-label="Politeness: how much lane changes consider other drivers."
-          data-help="How much lane changes consider other drivers.">?</span>
+          title="How much lane changes consider other drivers."
+          data-help="How much lane changes consider other drivers.">i</span>
   </span></td>
   <td> <input id="slider_MOBIL_p" type="range" 
               min="-0.2" max="1" step="0.1"></td>
@@ -192,6 +199,7 @@
     
 
 </center>
+<div id="paramTooltip" role="tooltip"></div>
 </div>   <!-- id="sliders">-->
 
 
