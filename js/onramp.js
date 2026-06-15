@@ -100,7 +100,7 @@ MOBIL_bBiasRight_truck=0.1;
 
 density=0.01; 
 
-var nLanes_main=3;
+var nLanes_main=2;
 var nLanes_rmp=1;
 
 
